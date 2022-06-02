@@ -3,21 +3,11 @@ package com.damian.bodzioch;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class LIFO {
-    ArrayList<Integer> queue = new ArrayList<>();
-    Iterator<Integer> iterator = queue.iterator();
-
-    public int size(){
-        return queue.size();
-    }
-
-    public void push(int value){
-        this.queue.add(value);
-    }
+public class LIFO extends FIFO{
 
     public void pop(){
-        if (this.queue.size() >= 1){
-            this.queue.remove(0);
+        if (getQueue().size() >= 1){
+            getQueue().remove(0);
         } else {
             System.out.println("Nie można wykonać operacji, ponieważ kolejka jest pusta!");
         }

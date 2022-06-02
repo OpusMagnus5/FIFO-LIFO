@@ -3,11 +3,11 @@ package com.damian.bodzioch;
 import java.util.ArrayList;
 
 public class FIFOtable {
-    int i = 0;
-    int[] queue = new int[1];
+    private int i = 0;
+    private int[] queue = new int[1];
 
     public int size(){
-        return this.queue.length - 1;
+        return i;
     }
 
     public void push(int value){
@@ -36,7 +36,7 @@ public class FIFOtable {
 
     private void increaseSizeOfTable(){
         int[] tempQueue = this.queue.clone();
-        this.queue = new int[i + 1];
+        this.queue = new int[i + (int) (this.queue.length * Math.sqrt(2))];
         for (int i = 0; i < tempQueue.length; i++){
             this.queue[i] = tempQueue[i];
         }
@@ -46,5 +46,17 @@ public class FIFOtable {
         for (int i = 0; i < this.i - 1; i++){
             System.out.print(this.queue[i] + " ");
         }
+    }
+
+    public int getI() {
+        return i;
+    }
+
+    public int[] getQueue() {
+        return queue;
+    }
+
+    public void setI(int i) {
+        this.i = i;
     }
 }

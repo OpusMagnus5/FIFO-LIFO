@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class FIFO {
-    ArrayList<Integer> queue = new ArrayList<>();
-    Iterator<Integer> interator = queue.iterator();
+    private ArrayList<Integer> queue = new ArrayList<>();
+    private Iterator<Integer> interator = queue.iterator();
 
     public int size(){
         return this.queue.size();
@@ -25,5 +25,9 @@ public class FIFO {
 
     public void print(){
         System.out.println(this.interator);
+    }
+
+    public ArrayList<Integer> getQueue() {
+        return queue;
     }
 }
