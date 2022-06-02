@@ -1,4 +1,4 @@
-package com.damian.bodzioch;
+package com.damian.bodzioch.queue;
 
 import java.util.ArrayList;
 
@@ -19,11 +19,17 @@ public class FIFOtable {
     }
 
     public void pop(){
-        if (this.queue.length != 0){
-            this.queue[i - 1] = 0;
-            i--;
-        } else {
-            System.out.println("Operacja nieudana, kolejka jest już pusta!");
+        if (this.i != 0){
+            if (this.i == 1){
+                i--;
+            } else {
+                for (int i = 1; i < getI(); i++) {
+                    this.queue[i - 1] = this.queue[i];
+                }
+                this.i--;
+            }
+        }else {
+            System.out.println("Kolejka jest pusta!");
         }
     }
 
@@ -43,20 +49,25 @@ public class FIFOtable {
     }
 
     public void print(){
-        for (int i = 0; i < this.i - 1; i++){
-            System.out.print(this.queue[i] + " ");
+        if (this.i == 0){
+            System.out.println("Kolejka jest pusta");
+        } else {
+            for (int i = 0; i < this.i; i++) {
+                System.out.print(this.queue[i] + " ");
+            }
+            System.out.println();
         }
     }
 
-    public int getI() {
+    protected int getI() {
         return i;
     }
 
-    public int[] getQueue() {
+    protected int[] getQueue() {
         return queue;
     }
 
-    public void setI(int i) {
+    protected void setI(int i) {
         this.i = i;
     }
 }

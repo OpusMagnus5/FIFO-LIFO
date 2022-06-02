@@ -1,11 +1,9 @@
-package com.damian.bodzioch;
+package com.damian.bodzioch.queue;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class FIFO {
     private ArrayList<Integer> queue = new ArrayList<>();
-    private Iterator<Integer> interator = queue.iterator();
 
     public int size(){
         return this.queue.size();
@@ -16,18 +14,22 @@ public class FIFO {
     }
 
     public void pop(){
-        if (this.queue.size() >= 1) {
-            this.queue.remove(queue.size() - 1);
+        if (this.queue.size() >= 1){
+            this.queue.remove(0);
         } else {
             System.out.println("Nie można wykonać operacji, ponieważ kolejka jest pusta!");
         }
     }
 
     public void print(){
-        System.out.println(this.interator);
+        if (this.queue.size() == 0){
+            System.out.println("Kolejka jest pusta");
+        } else {
+            System.out.println(this.queue);
+        }
     }
 
-    public ArrayList<Integer> getQueue() {
+    protected ArrayList<Integer> getQueue() {
         return queue;
     }
 }
