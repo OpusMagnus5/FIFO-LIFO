@@ -1,6 +1,6 @@
 package com.damian.bodzioch.queue;
 
-public class LIFO extends FIFO{
+public class LIFO extends FIFO implements Queue{
 
     public void pop(){
         if (getQueue().size() >= 1) {

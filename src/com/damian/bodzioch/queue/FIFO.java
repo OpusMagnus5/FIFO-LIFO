@@ -2,7 +2,7 @@ package com.damian.bodzioch.queue;
 
 import java.util.ArrayList;
 
-public class FIFO {
+public class FIFO implements Queue{
     private ArrayList<Integer> queue = new ArrayList<>();
 
     public int size(){

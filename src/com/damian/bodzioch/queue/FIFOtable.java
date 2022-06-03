@@ -2,7 +2,7 @@ package com.damian.bodzioch.queue;
 
 import java.util.ArrayList;
 
-public class FIFOtable {
+public class FIFOtable implements Queue{
     private int i = 0;
     private int[] queue = new int[1];
 
@@ -29,7 +29,7 @@ public class FIFOtable {
                 this.i--;
             }
         }else {
-            System.out.println("Kolejka jest pusta!");
+            System.out.println("Kolejka jest już pusta!");
         }
     }
 
